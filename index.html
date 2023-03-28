@@ -9,16 +9,20 @@
 <body>
     <button onclick="Maior();"> MAIOR VALOR</button>
     <button onclick="Menor();"> MENOR VALOR</button>
+    <button onclick="Media();"> MÉDIA</button>
 </body>
 <script>
-    //Variavel global (fora das funçoes)
-    alturas = [5,7,4,9,1];
-    //posição-> 0 1 2 3 4
-
+    alturas = [0,0,0,0,0];
+    for(cont=0;cont<=4;cont++)
+    {
+        n = prompt("DIGITE UM NUMERO" + (cont+1) );
+        n = parseInt(n); //Convertemos para inteiro
+        alturas[cont] = n;
+    }    
     function Maior()
     {
         maior = alturas [0];
-        for(cont=0;cont<=4;cont++)
+        for(cont=0;cont<=4;cont++)  //cont vai de 0 até 4
         {
             if(maior < alturas[cont])
             {
@@ -26,6 +30,30 @@
             }
         }
         alert(maior);
+    }
+    function Menor()
+    {
+        menor = alturas [0];
+        for(cont=0;cont<=4;cont++)  //cont vai de 0 até 4
+        {
+            if(menor > alturas[cont])
+            {
+                menor = alturas[cont];
+            }
+        }
+        alert(menor);
+    }
+
+    function Media()
+    {
+        soma = 0;
+        media = 0;
+        for(cont=0;cont<=4;cont++)
+        {
+            soma = soma + alturas[cont];
+        }
+        media = soma / 5
+        alert("A MÉDIA E: " + media)
     }
 
 </script>
